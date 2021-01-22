@@ -16,6 +16,6 @@
     }
     var el = document.getElementById("Button");
     el.addEventListener("click", copyText, false);
-    el.addEventListener("tcopyouchstart", copyText, false);
+    el.addEventListener("touchstart", copyText, false);
   ]]></script>
 </svg>
