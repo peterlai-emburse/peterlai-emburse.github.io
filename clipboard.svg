@@ -2,7 +2,7 @@
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
   <text id="Message" x="10" y="20" visibility="hidden">Text copied</text>
-  <circle cx="75" cy="75" r="50" fill="blue" onclick="copyText()" />
+  <circle id="Button" cx="75" cy="75" r="50" fill="blue" />
   <script type="text/javascript"><![CDATA[
     async function copyText() {
         try {
@@ -13,5 +13,8 @@
             console.error('Failed to copy: ', err);
         }
     }
+    var el = document.getElementById("Button");
+    el.addEventListener("click", copyText, false);
+    el.addEventListener("touchstart", copyText, false);
   ]]></script>
 </svg>
