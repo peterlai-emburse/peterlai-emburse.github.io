@@ -6,15 +6,17 @@
         iframe { border: none; }
     </style>
 
-    <h3>&lt;object&gt;</h3>
-    <object type="image/svg+xml" data="https://5a00e02cfa8c.ngrok.io/clipboard.svg" allow="clipboard-write"></object>
-    <!-- <object type="image/svg+xml" data="https://peterlai-emburse.github.io/clipboard.svg"></object> -->
-
     <h3>&lt;iframe&gt;</h3>
-    <iframe src="https://5a00e02cfa8c.ngrok.io/clipboard.svg" allow="clipboard-write"></iframe>
+    <p>Must grant access to the clipboard via an "allow" attribute on the iframe tag.</p>
+    <iframe src="card.svg" allow="clipboard-write"></iframe>
+
+    <h3>&lt;object&gt;</h3>
+    <p>I'm unable to resolve cross-origin permission issues preventing access to the clipboard.</p>
+    <object type="image/svg+xml" data="card.svg"></object>
 
     <h3>&lt;img&gt;</h3>
-    <img src="clipboard.svg" />
+    <p>Inherently non-interactive.</p>
+    <img src="card.svg" />
 
 </body>
 

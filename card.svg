@@ -5,6 +5,9 @@
   <text id="Message" x="35" y="140" visibility="hidden">Text copied</text>
   <circle id="Button" cx="75" cy="75" r="35" fill="blue" />
   <script type="text/javascript"><![CDATA[
+    const queryOpts = { name: 'clipboard-write', allowWithoutGesture: false };
+    const permissionStatus = navigator.permissions.query(queryOpts);
+    console.log(permissionStatus.state);
     async function copyText() {
         try {
             await navigator.clipboard.writeText('4556989844275382');
@@ -16,6 +19,6 @@
     }
     var el = document.getElementById("Button");
     el.addEventListener("click", copyText, false);
-    el.addEventListener("touchstart", copyText, false);
+    el.addEventListener("tcopyouchstart", copyText, false);
   ]]></script>
 </svg>
