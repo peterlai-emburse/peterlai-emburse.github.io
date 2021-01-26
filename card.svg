@@ -1,21 +1,92 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <text x="10" y="20">4556989844275382</text>
-  <text id="Message" x="35" y="140" visibility="hidden">Text copied</text>
-  <circle id="Button" cx="75" cy="75" r="35" fill="blue" />
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Embedded card width/height ratio should be 856/540. -->
+<svg viewBox="0 0 856 540" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      /* Background color */
+      background-color: #1f3764;
+    }
+    text {
+      /* Text color */
+      fill: #f5f5f5;
+      stroke: rgba(0,0,0,1);
+      stroke-width: 0.035em;
+      font-family: menlo,monospace;
+      text-transform: uppercase;
+    }
+    #Pan {
+      font-size: 60px;
+      pointer-events: none;
+    }
+    .good-thru {
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+    .expiry,
+    .cardholder {
+      font-size: 35px;
+      letter-spacing: 0.1em;
+    }
+    #CopyButton {
+      fill: transparent;
+    }
+    #CopyButton:hover {
+      fill: rgba(255,255,255,0.1);
+      stroke: rgba(0,0,0,0.5);
+      cursor: pointer;
+    }
+    #Message {
+      opacity: 0;
+      font-size: 45px;
+      font-family: Tahoma;
+      text-transform: none;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    #Message.clicked {
+      opacity: 0;
+      animation: flash 3s ease;
+    }
+    @keyframes flash {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+  <image href="default.png" x="0" y="0" height="100%" width="100%" preserveAspectRatio="none"/>
+  <rect id="CopyButton" x="8%" y="52%" width="85%" height="15%" />
+  <text id="Message" x="50%" y="10%">Copied to Clipboard</text>
+  <text id="Pan"
+    x="10% 14.5% 19% 23.5% 31% 35.5% 40% 44.5% 52% 56.5% 61% 65.5% 73% 77.5% 82% 86.5%"
+    y="64%">9876543210987654</text>
+  <text class="good-thru">
+    <tspan x="11%" y="76.5%">Good</tspan>
+    <tspan x="11%" y="79%">Thru</tspan>
+  </text>
+  <text class="expiry">
+    <tspan x="17%" y="79%">10</tspan>
+    <tspan x="23%" y="79%">/</tspan>
+    <tspan x="25.75%" y="79%">20</tspan>
+  </text>
+  <text class="cardholder">
+    <tspan x="10%" y="87%">Cardholder Name 1</tspan>
+    <tspan x="10%" y="94.5%">Cardholder Name 2</tspan>
+  </text>
   <script type="text/javascript"><![CDATA[
     async function copyText() {
         try {
-            await navigator.clipboard.writeText('4556989844275382');
-            console.log('Copied text to clipboard.');
-            document.getElementById("Message").style.visibility = "visible";
+            var panText = document.getElementById("Pan");
+            await navigator.clipboard.writeText(panText.innerHTML);
+            var messageEl = document.getElementById("Message");
+            messageEl.classList.add("clicked");
+
         } catch (err) {
             console.error('Failed to copy: ', err);
         }
     }
-    var el = document.getElementById("Button");
-    el.addEventListener("click", copyText, false);
-    el.addEventListener("touchstart", copyText, false);
+    var copyButton = document.getElementById("CopyButton");
+    copyButton.addEventListener("click", copyText, false);
+    copyButton.addEventListener("touchstart", copyText, false);
   ]]></script>
 </svg>

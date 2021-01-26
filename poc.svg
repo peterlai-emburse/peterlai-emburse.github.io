@@ -1,0 +1,21 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <text x="10 20 30" y="20">4556989844275382</text>
+  <text id="Message" x="35" y="140" visibility="hidden">Text copied</text>
+  <circle id="Button" cx="75" cy="75" r="35" fill="blue" />
+  <script type="text/javascript"><![CDATA[
+    async function copyText() {
+        try {
+            await navigator.clipboard.writeText('4556989844275382');
+            console.log('Copied text to clipboard.');
+            document.getElementById("Message").style.visibility = "visible";
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+    var el = document.getElementById("Button");
+    el.addEventListener("click", copyText, false);
+    el.addEventListener("touchstart", copyText, false);
+  ]]></script>
+</svg>
