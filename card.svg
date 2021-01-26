@@ -10,7 +10,7 @@
       /* Text color */
       fill: #f5f5f5;
       stroke: rgba(0,0,0,1);
-      stroke-width: 0.035em;
+      stroke-width: 0.02em;
       font-family: menlo,monospace;
       text-transform: uppercase;
     }
