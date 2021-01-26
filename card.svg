@@ -18,12 +18,13 @@
       font-size: 60px;
       pointer-events: none;
     }
-    .good-thru {
-      font-size: 16px;
-      letter-spacing: 0.05em;
+    .good-thru,
+    .cvv-label {
+      font-size: 18px;
       pointer-events: none;
     }
     .expiry,
+    .cvv,
     .cardholder {
       font-size: 35px;
       letter-spacing: 0.1em;
@@ -61,14 +62,16 @@
     x="10% 14.5% 19% 23.5% 31% 35.5% 40% 44.5% 52% 56.5% 61% 65.5% 73% 77.5% 82% 86.5%"
     y="64%">9876543210987654</text>
   <text class="good-thru">
-    <tspan x="11%" y="76.5%">Good</tspan>
-    <tspan x="11%" y="79%">Thru</tspan>
+    <tspan x="11%" y="76%">Good</tspan>
+    <tspan x="11%" y="79.5%">Thru</tspan>
   </text>
   <text class="expiry">
     <tspan x="17%" y="79%">10</tspan>
     <tspan x="23%" y="79%">/</tspan>
     <tspan x="25.75%" y="79%">20</tspan>
   </text>
+  <text class="cvv-label" x="35.5%" y="78%">CVV</text>
+  <text class="cvv" x="40%" y="79%">123</text>
   <text class="cardholder">
     <tspan x="10%" y="87%">Cardholder Name 1</tspan>
     <tspan x="10%" y="94.5%">Cardholder Name 2</tspan>
